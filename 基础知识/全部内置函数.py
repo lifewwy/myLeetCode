@@ -12,3 +12,5 @@ print('\n总数为：' , len( dir(__builtins__) ))
 
 
 
+
+
