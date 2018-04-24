@@ -1,14 +1,27 @@
 # Python 3.5.2
+# ---------------------------------------------------------------------------------------------------------------------
+def println(l):
+    print(l.val, end='\t')
+    cursor = l.next
+    while cursor!=None:
+        print(cursor.val, end='\t')
+        cursor = cursor.next
+    print()
 
-import sys
-sys.path.append('./模块')  # '.' 表示当前目录
-import LinkedList
 # ---------------------------------------------------------------------------------------------------------------------
 # Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, x):
         self.val = x
         self.next = None
+
+
+#          |--- val
+#  ListNode|                    |--- val
+#          |--- next -> ListNode|                    |--- val
+#                               |--- next -> ListNode|
+#                                                    |--- next
+
 
 class Solution(object):
     def removeElements(self, head, val):
@@ -20,7 +33,7 @@ class Solution(object):
         if head == None:
             return head
         elif head != None and head.next == None:
-            if head.data == val:
+            if head.val == val:
                 return None
             else:
                 return head
@@ -30,7 +43,7 @@ class Solution(object):
             prev = dummy
 
             while head != None:
-                if head.data == val:
+                if head.val == val:
                     prev.next = head.next
                     head = prev
 
@@ -42,15 +55,25 @@ class Solution(object):
 # ---------------------------------------------------------------------------------------------------------------------
 if  __name__    ==  "__main__":
 
-    ll = LinkedList.LianBiao()
-    for i in [1, 2, 6, 3, 4, 5, 6]:
-        ll.addNode(i)
-    ll.print()
+    ll = ListNode(6);
+    ll.next = ListNode(2);
+    ll.next.next = ListNode(6);
+    ll.next.next.next = ListNode(3);
+    ll.next.next.next.next = ListNode(4);
+    ll.next.next.next.next.next = ListNode(5);
+    ll.next.next.next.next.next.next = ListNode(6);
+
+
+    println(ll)
+
 
     s = Solution()
-    s.removeElements(ll.root, 6)
+    ll = s.removeElements(ll, 6)
 
-    ll.print()
+    println(ll)
+
+
+
 
 
 
