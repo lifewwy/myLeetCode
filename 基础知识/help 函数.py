@@ -5,3 +5,4 @@ help(max)
 
 # 如果仅仅想得到文档字符串
 print(max.__doc__)
+

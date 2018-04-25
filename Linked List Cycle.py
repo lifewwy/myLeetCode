@@ -3,7 +3,9 @@
 # ---------------------------------------------------------------------------------------------------------------------
 import sys
 sys.path.append('./模块')  # '.' 表示当前目录
-import LinkedList
+
+# import LinkedList
+from println import println
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -18,10 +20,18 @@ import LinkedList
 # webbrowser.open("http://oj.leetcode.com/problems/linked-list-cycle/")
 
 # Definition for singly-linked list.
-# class ListNode(object):
-#   def __init__(self, x):
-#       self.val = x
-#       self.next = None
+class ListNode(object):
+  def __init__(self, x):
+      self.val = x
+      self.next = None
+
+
+#          |--- val
+#  ListNode|                    |--- val
+#          |--- next -> ListNode|                    |--- val
+#                               |--- next -> ListNode|
+#                                                    |--- next
+
 
 class Solution(object):
     def hasCycle(self, head):
@@ -29,44 +39,80 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        if head == None:
+
+        # 解法 ①
+        if head == None or head.next == None:
             return False
-        else:
-            fast = head
-            slow = head
-
-            while fast != None and fast.next != None:
-                slow = slow.next
-                fast = fast.next.next
-                if fast == slow:
-                    break
-
-            if fast == None or fast.next == None:
-                return False
-            elif fast == slow:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
                 return True
+        return False
 
-            return False
+        # 解法 ②
+        # if head == None:
+        #     return False
+        # else:
+        #     fast = head
+        #     slow = head
+        #
+        #     while fast != None and fast.next != None:
+        #         slow = slow.next
+        #         fast = fast.next.next
+        #         if fast == slow:
+        #             break
+        #
+        #     if fast == None or fast.next == None:
+        #         return False
+        #     elif fast == slow:
+        #         return True
+        #
+        #     return False
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-ll = LinkedList.LianBiao()
-for i in range(20):
-    ll.addNode(i)
-ll.print()
 
-s = Solution()
-print( s.hasCycle(ll.root) )
+if  __name__    ==  "__main__":
 
-cursor = ll.root
-while cursor.next!= None:
-    cursor = cursor.next
-# print(cursor.data)
-# print(cursor.next)
+    ll = ListNode(6);
+    ll.next = ListNode(2);
+    ll.next.next = ListNode(6);
+    ll.next.next.next = ListNode(3);
+    ll.next.next.next.next = ListNode(4);
+    ll.next.next.next.next.next = ListNode(5);
+    ll.next.next.next.next.next.next = ListNode(6);
 
-# 制造一个环路
-cursor.next = ll.root.next.next.next.next
 
-print( s.hasCycle(ll.root) )
+    println(ll)
+
+    s = Solution()
+    print('链表中是否存在环路：', s.hasCycle(ll) )
+
+    # 制造一个环路
+    ll.next.next.next.next.next.next.next = ll.next.next;
+
+    print('链表中是否存在环路：', s.hasCycle(ll) )
+
+
+# ll = LinkedList.LianBiao()
+# for i in range(20):
+#     ll.addNode(i)
+# ll.print()
+#
+# s = Solution()
+# print( s.hasCycle(ll.root) )
+#
+# cursor = ll.root
+# while cursor.next!= None:
+#     cursor = cursor.next
+# # print(cursor.data)
+# # print(cursor.next)
+#
+# # 制造一个环路
+# cursor.next = ll.root.next.next.next.next
+#
+# print( s.hasCycle(ll.root) )
 
 
