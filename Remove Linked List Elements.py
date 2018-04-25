@@ -47,10 +47,17 @@ class Solution(object):
                     prev.next = head.next
                     head = prev
 
+                # 定义两个指针，同时向后移动
                 prev = head
                 head = head.next
             return dummy.next
 
+
+# dummy
+#   ↓
+#   ☉   →  ☉   →  ☉   →  ☉   →  ☉   →  ☉
+#   ↑      ↑
+#  prev   head
 
 # ---------------------------------------------------------------------------------------------------------------------
 if  __name__    ==  "__main__":
