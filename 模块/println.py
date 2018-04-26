@@ -1,6 +1,6 @@
 
 
-class println(object):
+class Solution(object):
     def __init__(self, l):
         print(l.val, end='\t')
         cursor = l.next
