@@ -28,10 +28,17 @@ class Solution(object):
         # dummy = ListNode(0)
 
         while head:
+
             dummy.next, head.next, head = head, dummy.next, head.next
-            # dummy.next = head
-            # head.next = dummy.next
-            # head  = head.next
+            # head.next, dummy.next, head = dummy.next, head, head.next
+            # head.next, head, dummy.next= dummy.next, head.next, head
+
+            # 为什么换成下面这句就不对了 ？？？？？？？？
+            # head 与 head.next 的次序不能交换
+            # head, dummy.next, head.next = head.next, head, dummy.next
+            # dummy.next, head, head.next = head.next, head, dummy.next
+
+
         return dummy.next
 
 
@@ -41,7 +48,6 @@ if __name__ == "__main__":
     head.next = ListNode(2)
     head.next.next = ListNode(3)
     head.next.next.next = ListNode(4)
-    head.next.next.next.next = ListNode(5)
 
     println(Solution().reverseList(head))
 
