@@ -36,7 +36,7 @@ class Solution(object):
             # 为什么换成下面这句就不对了 ？？？？？？？？
             # head 与 head.next 的次序不能交换
             # head, dummy.next, head.next = head.next, head, dummy.next
-            # dummy.next, head, head.next = head.next, head, dummy.next
+            # dummy.next, head, head.next = head, head.next, dummy.next
 
 
         return dummy.next
