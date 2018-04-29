@@ -42,6 +42,20 @@ class Solution(object):
         return dummy.next
 
 
+    # def reverseList(self, head):
+    #     """
+    #     :type head: ListNode
+    #     :rtype: ListNode
+    #     """
+    #     dummy = ListNode(None)
+    #     while head:  # 终止条件是head=Null
+    #         nextnode = head.next  # nextnode是head后面的节点
+    #         head.next = dummy.next  # dummy.next是Null，所以这样head.next就成为了Null
+    #         dummy.next = head  # head当前数字给dummy.next
+    #         head = nextnode  # head向后一位
+    #     return dummy.next
+
+
 if __name__ == "__main__":
 
     head = ListNode(1)
