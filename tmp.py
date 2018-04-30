@@ -20,4 +20,6 @@ def func(n):
 
     print('b', end='\t')
 
-func(3)
+    return
+
+func(7)
