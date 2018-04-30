@@ -33,6 +33,27 @@ class Solution(object):
 
         return dummy.next
 
+# Recursive solution.
+class Solution2:
+    # @param {ListNode} head
+    # @return {ListNode}
+    def reverseList(self, head):
+        [begin, end] = self.reverseListRecu(head)
+        return begin
+
+    def reverseListRecu(self, head):
+        if not head:
+            return [None, None]
+
+        [begin, end] = self.reverseListRecu(head.next)
+
+        if end:
+            end.next = head
+            head.next = None
+            return [begin, head]
+        else:
+            return [head, head]
+
 if __name__ == "__main__":
 
     head = ListNode(1)
@@ -40,7 +61,8 @@ if __name__ == "__main__":
     head.next.next = ListNode(3)
     head.next.next.next = ListNode(4)
 
-    println(Solution().reverseList(head))
+    println(Solution2().reverseList(head))
+
 
 
 
