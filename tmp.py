@@ -1,36 +1,36 @@
-
-
-
-
-def sum_recu(n):
-    if n > 0:
-        return n + sum_recu( n - 1 )
-    else:
-        return 0
-
-print("递归求和：",sum_recu(4))
-
-def func(n):
-    print('a', end='\t')
-
-    if n<= 1:
+def println(l, N = 10):
+    if not l:
         return
 
-    func(n-1)
+    print(l.val, end='\t')
+    cursor = l.next
+    nCount = 1
+    while cursor != None and nCount < N:
+        nCount += 1
+        print(cursor.val, end='\t')
+        cursor = cursor.next
+    print()
 
-    print('b', end='\t')
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
-    return
 
-func(7)
+def a(head):
+    println(head)
+
+    if not head:
+        return
+
+    a(head.next)
+
+    println(head)
 
 
-def ab(n):
-    print(n)
-    if n > 0:
-        ab(n-1)
-    else:
-        print('-----')
-    print(n)
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
 
-ab(3)
+a(head)
