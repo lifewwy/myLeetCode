@@ -23,3 +23,14 @@ def func(n):
     return
 
 func(7)
+
+
+def ab(n):
+    print(n)
+    if n > 0:
+        ab(n-1)
+    else:
+        print('-----')
+    print(n)
+
+ab(3)
