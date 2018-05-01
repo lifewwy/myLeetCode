@@ -47,7 +47,7 @@ class Solution2:
 
         [begin, end] = self.reverseListRecu(head.next)
 
-        if end: 
+        if end:
             end.next = head
             head.next = None
             return [begin, head]
