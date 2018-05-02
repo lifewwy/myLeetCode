@@ -54,6 +54,22 @@ class Solution2:
         else:
             return [head, head]
 
+# class Solution2(object):
+#     def reverseList(self, head):
+#         """
+#         :type head: ListNode
+#         :rtype: ListNode
+#         """
+#         if not head or not head.next:
+#             return head
+#
+#         p = head.next
+#         n = self.reverseList(p)
+#
+#         head.next = None
+#         p.next = head
+#         return n
+
 if __name__ == "__main__":
 
     head = ListNode(1)
