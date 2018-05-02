@@ -17,6 +17,10 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+    def __repr__(self):
+        if self:
+            return "{} -> {}".format(self.val, self.next)
+
 
 # Iterative solution.
 class Solution(object):
@@ -77,7 +81,7 @@ if __name__ == "__main__":
     head.next.next = ListNode(3)
     # head.next.next.next = ListNode(4)
 
-    println(Solution2().reverseList(head))
+    print(Solution2().reverseList(head))
 
 
 
