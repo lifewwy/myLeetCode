@@ -19,6 +19,16 @@ class ListNode(object):
             return "{} -> {}".format(self.val, self.next)
 
 
+def ListToLink(x):
+    l = ListNode(88)
+    p = l
+    N = len(x)
+    for i in range(N):
+        p.next = ListNode(x[i])
+        p = p.next
+    return l.next
+
+
 class Solution(object):
     def deleteDuplicates(self, head):
         """
@@ -43,3 +53,5 @@ if __name__ == "__main__":
 
     print(Solution().deleteDuplicates(l))
 
+    l1 = ListToLink([1, 2, 4, 4, 6, 6, 6, 8])
+    print(Solution().deleteDuplicates(l1))
