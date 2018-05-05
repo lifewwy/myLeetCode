@@ -1,13 +1,28 @@
 # Python 3.5.2
 
 # ---------------------------------------------------------------------------------------------------------------------
-import sys
-sys.path.append('./模块')  # '.' 表示当前目录
+# import sys
+# sys.path.append('./模块')  # '.' 表示当前目录
 
 # import LinkedList
-from println import println
 
 # ---------------------------------------------------------------------------------------------------------------------
+
+def println(l, N = 10):
+    if not l:
+        return
+
+    print(l.val, end='\t')
+    cursor = l.next
+    nCount = 1
+    while cursor != None and nCount < N:
+        nCount += 1
+        print(cursor.val, end='\t')
+        cursor = cursor.next
+    print()
+
+# ---------------------------------------------------------------------------------------------------------------------
+
 
 # 原题地址：http://oj.leetcode.com/problems/linked-list-cycle/
 # 题意：判断链表中是否存在环路。
@@ -24,6 +39,10 @@ class ListNode(object):
   def __init__(self, x):
       self.val = x
       self.next = None
+
+  def __repr__(self):
+      if self:
+          return "{} → {}".format(self.val, self.next)
 
 
 #          |--- val
@@ -54,24 +73,6 @@ class Solution(object):
         return False
 
         # 解法 ②
-        # if head == None:
-        #     return False
-        # else:
-        #     fast = head
-        #     slow = head
-        #
-        #     while fast != None and fast.next != None:
-        #         slow = slow.next
-        #         fast = fast.next.next
-        #         if fast == slow:
-        #             break
-        #
-        #     if fast == None or fast.next == None:
-        #         return False
-        #     elif fast == slow:
-        #         return True
-        #
-        #     return False
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -87,7 +88,7 @@ if  __name__    ==  "__main__":
     ll.next.next.next.next.next.next = ListNode(6);
 
 
-    println(ll)
+    print(ll)
 
     s = Solution()
     print('链表中是否存在环路：', s.hasCycle(ll) )
@@ -95,26 +96,11 @@ if  __name__    ==  "__main__":
     # 制造一个环路
     ll.next.next.next.next.next.next.next = ll.next.next;
 
+    println(ll,10)
+
     print('链表中是否存在环路：', s.hasCycle(ll) )
 
 
-# ll = LinkedList.LianBiao()
-# for i in range(20):
-#     ll.addNode(i)
-# ll.print()
-#
-# s = Solution()
-# print( s.hasCycle(ll.root) )
-#
-# cursor = ll.root
-# while cursor.next!= None:
-#     cursor = cursor.next
-# # print(cursor.data)
-# # print(cursor.next)
-#
-# # 制造一个环路
-# cursor.next = ll.root.next.next.next.next
-#
-# print( s.hasCycle(ll.root) )
+
 
 
