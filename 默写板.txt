@@ -5,7 +5,6 @@
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-result = []
-for x in A:
-    result.append(B.index(x))
-return result
+    words = ["gin", "zen", "gig", "msg"]
+
+    retun len( { ''.join(d[ord(i) - ord('a')] for i in w) for w in words} )
