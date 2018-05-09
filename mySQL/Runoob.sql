@@ -1,3 +1,9 @@
+
+-- MySQL 菜鸟教程
+
+-- MySQL Workbench
+-- 注释快捷键 Command + / 
+
 -- 创建数据库
 -- CREATE DATABASE WWY1; 
 
@@ -22,7 +28,7 @@ use WWY1;
 -- drop table runoob_tbl
 
 -- 插入数据
-INSERT INTO runoob_tbl 
+/*INSERT INTO runoob_tbl 
     (runoob_title, runoob_author, submission_date)
      VALUES
      ("学习 PHP", "菜鸟教程", NOW());
@@ -35,7 +41,7 @@ INSERT INTO runoob_tbl
 INSERT INTO runoob_tbl
     (runoob_title, runoob_author, submission_date)
     VALUES
-    ("JAVA 教程", "RUNOOB.COM", '2016-05-06');
+    ("JAVA 教程", "RUNOOB.COM", '2016-05-06');*/
 
 /*查询数据
 MySQL 数据库使用 SELECT 语句来查询数据。
@@ -46,8 +52,25 @@ FROM table_name
 [WHERE Clause]
 [LIMIT N][ OFFSET M]*/
 
-
-
+-- 注释快捷键 Command + / 
+-- SELECT 
+--     *
+-- FROM
+--     runoob_tbl;
+-- 
+-- SELECT 
+--     runoob_author
+-- FROM
+--     runoob_tbl;
+ 
+SELECT 
+    runoob_title, submission_date
+FROM
+    runoob_tbl
+WHERE
+    runoob_author = '菜鸟教程';
+  
+  
 
 
 
