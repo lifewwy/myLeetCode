@@ -51,10 +51,13 @@ class Logger(object):
         """
         while self.__dq and self.__dq[0][0] <= timestamp - 10:
             self.__printed.remove(self.__dq.popleft()[1])
+
         if message in self.__printed:
             return False
+
         self.__dq.append((timestamp, message))
         self.__printed.add(message)
+
         return True
 
 from collections import defaultdict
@@ -100,11 +103,24 @@ class Logger1(object):
 # obj = Logger()
 # param_1 = obj.shouldPrintMessage(timestamp,message)
 
-obj = Logger()
-print(obj.shouldPrintMessage(1,'foo'))
-print(obj.shouldPrintMessage(1,'abc'))
-print(obj.shouldPrintMessage(2,'bar'))
-print(obj.shouldPrintMessage(3,'foo'))
+logger = Logger()
+print(logger.shouldPrintMessage(1,'foo'))
+print(logger.shouldPrintMessage(2,'bar'))
+print(logger.shouldPrintMessage(3,'foo'))
+print(logger.shouldPrintMessage(8,'bar'))
+print(logger.shouldPrintMessage(10,'foo'))
+print(logger.shouldPrintMessage(11,'foo'))
+print(logger.shouldPrintMessage(12,'foo'))
+
+
+
+
+
+
+
+
+
+
 
 
 
