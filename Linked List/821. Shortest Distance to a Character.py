@@ -52,20 +52,6 @@ class Solution:
         return ans
 
 
-class Solution1:
-    def shortestToChar(self, S, C):
-        """
-        :type S: str
-        :type C: str
-        :rtype: List[int]
-        """
-
-        a = []
-        for i,x in enumerate(S):
-            if x == C:
-                a.appen(i)
-
-
 
 if __name__ == '__main__':
 
