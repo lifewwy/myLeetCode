@@ -31,6 +31,8 @@
 # 这道题让我们设计一个记录系统每次接受信息并保存时间戳，然后让我们打印出该消息，
 # 前提是最近10秒内没有打印出这个消息。这不是一道难题，我们可以用哈希表来做。
 
+
+
 import collections
 class Logger(object):
 
@@ -49,16 +51,26 @@ class Logger(object):
         :type message: str
         :rtype: bool
         """
-        while self.__dq and self.__dq[0][0] <= timestamp - 10:
-            self.__printed.remove(self.__dq.popleft()[1])
+        print('------------------------------------------------')
+
+        # 删除过期的被打印 message，相当于该 message 没有被打印过
+        while self.__dq and timestamp >= self.__dq[0][0] + 10:
+            self.__printed.remove(self.__dq.popleft()[1]);
 
         if message in self.__printed:
+            print('self.__dq: ', self.__dq)
+            print('self.__printed: ', self.__printed)
+            print()
             return False
 
-        self.__dq.append((timestamp, message))
-        self.__printed.add(message)
+        # 只有被打印过的 message 和它的 timestamp 才会被放入 __dq 和 __printed
+        self.__dq.append((timestamp, message));  print('self.__dq: ', self.__dq)
+        self.__printed.add(message);             print('self.__printed: ', self.__printed)
 
+        print()
         return True
+
+
 
 from collections import defaultdict
 class Logger1(object):
@@ -85,7 +97,7 @@ class Logger1(object):
         oldTimes = list( self.timeToMessages.keys() )
 
         # remove timestamps whare are too old
-        for oldTime in oldTimes:
+        for oldTime in self.timeToMessages:
             if timestamp - oldTime >= self.timeStoreLen:
                 del self.timeToMessages[ oldTime ]
 
