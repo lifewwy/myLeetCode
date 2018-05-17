@@ -23,7 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a">
+        <schema name="WWY1" object-types="column, function, table, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="016eab4a-554d-4bfb-bde4-1666ebc62e2a">
@@ -37,9 +41,10 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$PROJECT_DIR$/mySQL/595. Big Countries.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="WWY1" />
     <mapping file-url="file://$PROJECT_DIR$/mySQL/Runoob.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="" />
-    <mapping file-url="file://$PROJECT_DIR$/mySQL/613. Shortest Distance in a Line.sql" connection-id="virtual-mysql-connection" session-id="MAIN" current-schema="" />
-    <mapping file-url="file://$PROJECT_DIR$/mySQL/595. Big Countries.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="" />
+    <mapping file-url="file://$PROJECT_DIR$/mySQL/613. Shortest Distance in a Line.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="WWY1" />
+    <mapping file-url="file://$PROJECT_DIR$/mySQL/584. Find Customer Referee.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="ROOT" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -61,13 +66,13 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" active="false">
+      <connection id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="8.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -103,6 +108,7 @@
           <restore-workspace-deep value="true" />
           <environment-type value="default" />
           <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
           <password-expiry-time value="10" />
           <max-connection-pool-size value="7" />
           <alternative-statement-delimiter value="" />
