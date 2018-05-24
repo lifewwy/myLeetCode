@@ -41,10 +41,10 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/mySQL/595. Big Countries.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="WWY1" />
-    <mapping file-url="file://$PROJECT_DIR$/mySQL/Runoob.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="" />
     <mapping file-url="file://$PROJECT_DIR$/mySQL/613. Shortest Distance in a Line.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="WWY1" />
     <mapping file-url="file://$PROJECT_DIR$/mySQL/584. Find Customer Referee.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="ROOT" />
+    <mapping file-url="file://$PROJECT_DIR$/mySQL/Runoob.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="" />
+    <mapping file-url="file://$PROJECT_DIR$/mySQL/595. Big Countries.sql" connection-id="016eab4a-554d-4bfb-bde4-1666ebc62e2a" session-id="MAIN" current-schema="WWY1" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
