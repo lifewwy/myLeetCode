@@ -7,7 +7,7 @@
 # stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5
 # step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)
 
-type (range(5))  # 右击鼠标，然后选择 Execute Line in Console
+type (range(5))    # 右击鼠标，然后选择 Execute Line in Console
 # help( range )    # 右击鼠标，然后选择 Execute Line in Console
 
 print( list(range(5)) )
